@@ -1,0 +1,52 @@
+load("@rules_java//java:defs.bzl", "java_library", "java_test")
+
+package(default_visibility = ["//visibility:public"])
+
+java_test(
+    name = "InstrumentationResultParserTest",
+    srcs = glob(["com/android/ddmlib/**/*.java"]),
+    test_class = "com.android.ddmlib.testrunner.InstrumentationResultParserTest",
+    deps = [
+        "@maven//:org_jspecify_jspecify",
+        "//src/main:ddmlib",
+        "@maven//:junit_junit",
+        "@maven//:org_mockito_mockito_core",
+        "@maven//:com_google_truth_truth",
+    ],
+)
+java_test(
+    name = "RemoteAndroidTestRunnerTest",
+    srcs = glob(["com/android/ddmlib/**/*.java"]),
+    test_class = "com.android.ddmlib.testrunner.RemoteAndroidTestRunnerTest",
+    deps = [
+        "@maven//:org_jspecify_jspecify",
+        "//src/main:ddmlib",
+        "@maven//:junit_junit",
+        "@maven//:org_mockito_mockito_core",
+        "@maven//:com_google_truth_truth",
+    ],
+)
+java_test(
+    name = "TestRunResultTest",
+    srcs = glob(["com/android/ddmlib/**/*.java"]),
+    test_class = "com.android.ddmlib.testrunner.TestRunResultTest",
+    deps = [
+        "@maven//:org_jspecify_jspecify",
+        "//src/main:ddmlib",
+        "@maven//:junit_junit",
+        "@maven//:org_mockito_mockito_core",
+        "@maven//:com_google_truth_truth",
+    ],
+)
+java_test(
+    name = "XmlTestRunListenerTest",
+    srcs = glob(["com/android/ddmlib/**/*.java"]),
+    test_class = "com.android.ddmlib.testrunner.XmlTestRunListenerTest",
+    deps = [
+        "@maven//:org_jspecify_jspecify",
+        "//src/main:ddmlib",
+        "@maven//:junit_junit",
+        "@maven//:org_mockito_mockito_core",
+        "@maven//:com_google_truth_truth",
+    ],
+)

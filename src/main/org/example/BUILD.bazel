@@ -1,0 +1,13 @@
+load("@rules_java//java:defs.bzl", "java_binary")
+
+package(default_visibility = ["//visibility:public"])
+
+java_binary(
+    name = "Main",
+    main_class = "org.example.Main",
+    srcs = glob(["**/*.java"]),
+    deps = [
+      "//src/main:ddmlib",
+      "@maven//:org_jspecify_jspecify"
+    ]
+)

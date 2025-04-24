@@ -1,0 +1,12 @@
+load("@rules_java//java:defs.bzl", "java_library")
+
+package(default_visibility = ["//visibility:public"])
+
+java_library(
+    name = "ddmlib",
+    srcs = glob(["com/android/ddmlib/**/*.java"]),
+    deps = [
+        "@maven//:org_jspecify_jspecify",
+        "@maven//:net_sf_kxml_kxml2",
+    ],
+)
